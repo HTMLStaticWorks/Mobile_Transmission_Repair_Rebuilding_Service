@@ -79,9 +79,9 @@ function renderHeader() {
                 <li><a href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="nav-actions">
-                <button onclick="toggleTheme()" class="toggle-btn theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-                <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                <a href="signup.html" class="btn btn-primary d-none-mobile">Sign Up</a>
+                <button onclick="toggleTheme()" class="toggle-btn theme-toggle d-none-mobile" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button onclick="toggleRTL()" class="toggle-btn d-none-mobile" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.85rem;">Sign Up</a>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -98,8 +98,9 @@ function renderHeader() {
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
-                <li style="display: flex; gap: 1rem; width: 100%; padding-top: 1rem;">
-                    <a href="signup.html" class="btn btn-primary" style="flex: 1;">Sign Up</a>
+                <li style="display: flex; gap: 1rem; width: 100%; padding-top: 1rem; justify-content: center;">
+                    <button onclick="toggleTheme()" class="toggle-btn theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
                 </li>
             </ul>
         </div>

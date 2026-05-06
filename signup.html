@@ -84,6 +84,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background: var(--bg-color);
+            color: var(--text-color);
             cursor: pointer;
             font-weight: 600;
             transition: var(--transition);
@@ -99,7 +100,7 @@
 <body>
     <div class="auth-toggles">
         <button onclick="toggleTheme()" class="toggle-btn theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-        <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-language"></i></button>
+        <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
     </div>
 
     <div class="auth-card">
@@ -114,8 +115,12 @@
 
         <form action="dashboard.html">
             <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe" required>
+                <label>First Name</label>
+                <input type="text" placeholder="John" required>
+            </div>
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" required>
             </div>
             <div class="input-group">
                 <label>Email Address</label>
@@ -124,7 +129,18 @@
             <div class="input-group">
                 <label>Password</label>
                 <input type="password" id="password" placeholder="••••••••" required>
-                <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
+            </div>
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="••••••••" required>
+                <i class="fas fa-eye password-toggle" onclick="togglePassword('confirm-password', this)"></i>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; cursor: pointer; opacity: 0.8; font-weight: 500;">
+                        <input type="checkbox" style="width: auto; margin: 0;"> Remember Me
+                    </label>
+                    <a href="#" style="font-size: 0.8rem; opacity: 0.6; text-decoration: underline;">Forgot Password?</a>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Sign Up</button>
         </form>
@@ -146,9 +162,8 @@
 
     <script src="js/main.js"></script>
     <script>
-        function togglePassword() {
-            const pwd = document.getElementById('password');
-            const icon = document.querySelector('.password-toggle');
+        function togglePassword(id, icon) {
+            const pwd = document.getElementById(id);
             if (pwd.type === 'password') {
                 pwd.type = 'text';
                 icon.className = 'fas fa-eye-slash password-toggle';

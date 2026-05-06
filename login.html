@@ -91,6 +91,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background: var(--bg-color);
+            color: var(--text-color);
             cursor: pointer;
             font-weight: 600;
             transition: var(--transition);
@@ -106,7 +107,7 @@
 <body>
     <div class="auth-toggles">
         <button onclick="toggleTheme()" class="toggle-btn theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-        <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-language"></i></button>
+        <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
     </div>
 
     <div class="auth-card">
@@ -120,22 +121,35 @@
         <p style="opacity: 0.6; margin-bottom: 2.5rem;">Log in to access your dashboard</p>
 
         <form action="dashboard.html">
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="name@example.com" required>
+            <!-- Login View -->
+            <div id="login-form-view">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+                </div>
+                <div class="auth-extra">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="javascript:void(0)" onclick="toggleResetView(true)" style="color: var(--primary-color); font-weight: 600;">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Log In</button>
             </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
-                <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+
+            <!-- Reset View (Hidden by default) -->
+            <div id="reset-form-view" style="display: none;">
+                <div class="input-group">
+                    <label>Recovery Email</label>
+                    <input type="email" placeholder="Enter your registered email" required>
+                </div>
+                <button type="button" onclick="alert('Recovery link sent!')" class="btn btn-primary" style="width: 100%; padding: 1rem; margin-bottom: 1rem;">Send Reset Link</button>
+                <a href="javascript:void(0)" onclick="toggleResetView(false)" style="font-size: 0.9rem; opacity: 0.6; text-decoration: underline;">Back to Login</a>
             </div>
-            <div class="auth-extra">
-                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox"> Remember Me
-                </label>
-                <a href="#" style="color: var(--primary-color); font-weight: 600;">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Log In</button>
         </form>
 
         <div style="margin-top: 2rem; position: relative;">
@@ -155,6 +169,25 @@
 
     <script src="js/main.js"></script>
     <script>
+        function toggleResetView(showReset) {
+            const loginView = document.getElementById('login-form-view');
+            const resetView = document.getElementById('reset-form-view');
+            const title = document.querySelector('.auth-card h2');
+            const subtitle = document.querySelector('.auth-card p');
+
+            if (showReset) {
+                loginView.style.display = 'none';
+                resetView.style.display = 'block';
+                title.innerText = 'Reset Password';
+                subtitle.innerText = 'Enter your email to recover your account';
+            } else {
+                loginView.style.display = 'block';
+                resetView.style.display = 'none';
+                title.innerText = 'Welcome Back';
+                subtitle.innerText = 'Log in to access your dashboard';
+            }
+        }
+
         function togglePassword() {
             const pwd = document.getElementById('password');
             const icon = document.querySelector('.password-toggle');
