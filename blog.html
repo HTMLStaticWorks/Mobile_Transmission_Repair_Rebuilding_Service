@@ -35,7 +35,7 @@
         <!-- Blog Feed -->
         <section>
             <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2.5rem;">
                     <!-- Post 1 -->
                     <article
                         style="background: var(--bg-color); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
@@ -122,7 +122,7 @@
         <!-- Featured Technical Deep-Dive -->
         <section style="background-color: var(--card-bg); padding: 120px 0;">
             <div class="container">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 5rem; align-items: center;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 5rem; align-items: center;">
                     <div>
                         <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 2px; font-size: 0.9rem;">FEATURED CASE STUDY</span>
                         <h2 style="font-size: 3rem; margin: 1.5rem 0; line-height: 1.1;">The 2026 Fleet Efficiency Report</h2>
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary" style="margin-top: 3rem; display: inline-block; padding: 1.25rem 3rem; border-radius: 50px;">Download Full Report</a>
+                        <a href="#" class="btn btn-primary" style="margin-top: 3rem; display: inline-block; padding: 0.8rem 2rem; border-radius: 50px;">Download Full Report</a>
                     </div>
                     <div style="position: relative;">
                         <img src="https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg" alt="Technical Report" style="width: 100%; border-radius: 30px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);">
@@ -154,11 +154,11 @@
         </section>
 
         <!-- The Video Workshop -->
-        <section style="background-color: var(--text-color); color: white; padding: 120px 0; overflow: hidden;">
+        <section style="padding: 120px 0; overflow: hidden;">
             <div class="container" style="text-align: center;">
                 <div style="max-width: 800px; margin: 0 auto 5rem;">
                     <span style="color: var(--secondary-color); font-weight: 800; letter-spacing: 2px;">WORKSHOP SESSIONS</span>
-                    <h2 style="font-size: 3.5rem; margin-top: 1rem; color: white;">The Anatomy of a Rebuild</h2>
+                    <h2 style="font-size: 3.5rem; margin-top: 1rem;">The Anatomy of a Rebuild</h2>
                     <p style="font-size: 1.2rem; opacity: 0.7;">Go inside our state-of-the-art clean room and watch as our Master Technicians perform a clinical-grade teardown on a high-performance 10-speed transmission.</p>
                 </div>
                 
@@ -194,7 +194,7 @@
                 <h2>Get Maintenance Tips in Your Inbox</h2>
                 <p style="margin-bottom: 2rem; opacity: 0.9;">Stay updated with the latest guides and seasonal offers.
                 </p>
-                <form style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <form class="cta-btns" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <input type="email" placeholder="Enter your email"
                         style="flex: 1; padding: 1rem; border-radius: 8px; border: none; min-width: 250px;">
                     <button type="submit" class="btn btn-secondary">Subscribe</button>

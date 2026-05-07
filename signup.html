@@ -95,6 +95,12 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
+        @media (max-width: 480px) {
+            body { padding: 1rem; }
+            .auth-card { padding: 2rem 1.5rem; }
+            .social-login { grid-template-columns: 1fr; }
+            .auth-toggles { top: 1rem; right: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -142,7 +148,7 @@
                     <a href="#" style="font-size: 0.8rem; opacity: 0.6; text-decoration: underline;">Forgot Password?</a>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Sign Up</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.7rem;">Sign Up</button>
         </form>
 
         <div style="margin-top: 2rem; position: relative;">

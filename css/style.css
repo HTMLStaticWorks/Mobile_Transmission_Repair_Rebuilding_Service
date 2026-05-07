@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 767px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 }
 
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1.1rem;
     border-radius: var(--border-radius);
     font-weight: 600;
     cursor: pointer;
@@ -340,12 +340,16 @@ footer {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    z-index: 999;
+    z-index: 1001; /* Higher than footer and other elements */
 }
 
-.scroll-top.show {
-    opacity: 1;
-    visibility: visible;
+@media (max-width: 767px) {
+    .scroll-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Theme & RTL Toggles */
@@ -502,6 +506,57 @@ footer {
 
     .nav-actions {
         gap: 0.25rem;
+    }
+
+    /* Stack buttons on mobile */
+    .hero-btns, .cta-btns {
+        flex-direction: column !important;
+        width: 100%;
+    }
+
+    .hero-btns .btn, .cta-btns .btn {
+        width: 100%;
+    }
+
+    /* Why Choose Us Grid Fix */
+    .why-us-grid, .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Section Spacing */
+    section {
+        padding: 60px 0;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1023px) {
+    section {
+        padding: 80px 0;
+    }
+
+    #cta {
+        padding: 100px 0;
+    }
+
+    /* Estimator Tablet Fix */
+    .estimator-info, .estimator-form {
+        padding: 3rem !important;
+    }
+}
+
+/* Mobile Specific Fixes */
+@media (max-width: 767px) {
+    .estimator-info, .estimator-form {
+        padding: 2.5rem 1.5rem !important;
+    }
+    
+    .estimator-card {
+        border-radius: 20px !important;
+    }
+
+    .estimator-info h2 {
+        font-size: 2rem !important;
     }
 }
 
