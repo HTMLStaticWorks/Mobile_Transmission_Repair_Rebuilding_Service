@@ -16,7 +16,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/mechanical_logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/shiftfix_logo.svg">
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -78,22 +78,20 @@
             style="background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent), radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.05), transparent); min-height: 100vh; display: flex; align-items: center; padding: 120px 0 60px;">
             <div class="container">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 4rem; align-items: center;">
-                    <div class="hero-content">
+                    <div class="hero-content" style="text-align: center;">
                         <span class="premium-badge">Elite Mechanical Services</span>
                         <h1
                             style="font-size: clamp(3.5rem, 8vw, 5.5rem); font-weight: 800; line-height: 0.95; margin-bottom: 2rem; letter-spacing: -3px;">
                             Engineering <br><span class="gradient-text">Excellence</span> <br>At Your Door.
                         </h1>
                         <p
-                            style="font-size: 1.35rem; opacity: 0.8; margin-bottom: 3rem; max-width: 550px; line-height: 1.6;">
+                            style="font-size: 1.35rem; opacity: 0.8; margin-bottom: 3rem; max-width: 550px; line-height: 1.6; margin-inline: auto;">
                             ShiftFix Elite brings world-class transmission diagnostics and rebuilding directly to you.
                             No towing, no delays, just precision.</p>
-                        <div class="hero-btns" style="display: flex; gap: 1.5rem;">
-                            <a href="#estimator" class="btn btn-primary"
-                                style="padding: 0.8rem 2rem; border-radius: 50px; font-size: 1.1rem; box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.4);">Book
+                        <div class="hero-btns" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="#estimator" class="btn btn-primary">Book
                                 Priority Service</a>
-                            <a href="about.html" class="btn btn-outline"
-                                style="padding: 0.8rem 1.8rem; border-radius: 50px; font-size: 1.1rem; border-width: 1px;">Our
+                            <a href="about.html" class="btn btn-outline">Our
                                 Philosophy</a>
                         </div>
                     </div>
@@ -143,30 +141,40 @@
                             </div>
                         </div>
                     </div>
-                    <div class="performance-content">
+                    <div class="performance-content" style="text-align: center;">
                         <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 2px;">PERFORMANCE
                             ENGINEERING</span>
                         <h2 style="font-size: 3.5rem; margin-top: 1rem; margin-bottom: 2rem;">Beyond Factory Standards.
                         </h2>
-                        <p style="font-size: 1.2rem; opacity: 0.8; line-height: 1.8; margin-bottom: 2rem;">For
+                        <p style="font-size: 1.2rem; opacity: 0.8; line-height: 1.8; margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">For
                             heavy-duty towing, performance racing, or industrial fleet demands, "factory specs" often
                             aren't enough. We engineer custom solutions that exceed original manufacturer tolerances.
                         </p>
-                        <ul style="list-style: none; padding: 0; display: grid; gap: 1.5rem;">
-                            <li style="display: flex; gap: 1rem; align-items: center;">
+                        <ul style="list-style: none; padding: 0; display: grid; gap: 1.5rem; justify-content: center;">
+                            <li style="display: flex; gap: 1rem; align-items: center; width: 100%; max-width: 400px; text-align: left;">
                                 <i class="fas fa-check-circle"
                                     style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <span>High-Temp Raybestos Clutch Packs</span>
                             </li>
-                            <li style="display: flex; gap: 1rem; align-items: center;">
+                            <li style="display: flex; gap: 1rem; align-items: center; width: 100%; max-width: 400px; text-align: left;">
                                 <i class="fas fa-check-circle"
                                     style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <span>Recalibrated Valve Bodies for Firmer Shifting</span>
                             </li>
-                            <li style="display: flex; gap: 1rem; align-items: center;">
+                            <li style="display: flex; gap: 1rem; align-items: center; width: 100%; max-width: 400px; text-align: left;">
                                 <i class="fas fa-check-circle"
                                     style="color: var(--primary-color); font-size: 1.2rem;"></i>
                                 <span>Heavy-Duty Torque Converter Upgrades</span>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: center; width: 100%; max-width: 400px; text-align: left;">
+                                <i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); font-size: 1.2rem;"></i>
+                                <span>Cryogenically Treated Gear Sets</span>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: center; width: 100%; max-width: 400px; text-align: left;">
+                                <i class="fas fa-check-circle"
+                                    style="color: var(--primary-color); font-size: 1.2rem;"></i>
+                                <span>Performance Transmission Coolers</span>
                             </li>
                         </ul>
                     </div>
@@ -351,8 +359,7 @@
                                     <option>Dash Warning Lights</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-primary"
-                                style="padding: 1rem; border-radius: 50px; font-weight: 800;">Generate Smart
+                            <button type="button" class="btn btn-primary">Generate Smart
                                 Quote</button>
                         </form>
                     </div>
@@ -366,8 +373,7 @@
                 <h2 style="font-size: 4rem; font-weight: 800; margin-bottom: 2rem;">Ready for the Elite Experience?</h2>
                 <p style="font-size: 1.5rem; opacity: 0.7; margin-bottom: 4rem; max-width: 800px; margin-inline: auto;">
                     Join the thousands of premium vehicle owners who trust ShiftFix for zero-compromise engineering.</p>
-                <a href="signup.html" class="btn btn-secondary"
-                    style="padding: 1rem 2.5rem; font-size: 1.2rem; border-radius: 100px;">Start Your Journey</a>
+                <a href="signup.html" class="btn btn-secondary">Start Your Journey</a>
             </div>
         </section>
     </main>

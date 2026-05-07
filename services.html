@@ -12,6 +12,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Styles -->
+    <link rel="icon" type="image/svg+xml" href="assets/shiftfix_logo.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,57 +27,104 @@
             </div>
         </section>
 
-        <!-- Service List -->
-        <section>
+        <!-- Comprehensive Service Grid -->
+        <section id="service-grid" style="padding: 100px 0;">
             <div class="container">
-                <!-- Service 1: Rebuilds -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 4rem; align-items: center; margin-bottom: 6rem;">
-                    <div class="service-image">
-                        <img src="assets/transmission_rebuild.png" alt="Transmission Rebuild" style="border-radius: 24px; box-shadow: var(--shadow);">
-                    </div>
-                    <div class="service-text">
-                        <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 1px;">MASTER CRAFTSMANSHIP</span>
-                        <h2 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">Full Transmission Rebuilds</h2>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.8;">Our rebuild process is exhaustive. We completely disassemble your transmission, clean every component ultrasonically, and replace all soft parts (seals, clutches, gaskets) with premium OEM or better-than-OEM components.</p>
-                        <p style="margin-bottom: 2rem; opacity: 0.8;">Each rebuild is dyno-tested to ensure factory-spec performance before being reinstalled in your vehicle.</p>
-                        <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-                            <li><i class="fas fa-check-circle" style="color: var(--success);"></i> OEM Internals</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Dyno Tested</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success);"></i> 36-Mo Warranty</li>
-                            <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Mobile Tracking</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary">Schedule a Rebuild</a>
-                    </div>
+                <div class="section-title">
+                    <h2>Mastery Across Every Component</h2>
+                    <p>From complex electronic calibrations to heavy-duty mechanical rebuilds.</p>
+                    <div class="underline"></div>
                 </div>
-
-                <!-- Service 2: Diagnostics -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 4rem; align-items: center; margin-bottom: 6rem;">
-                    <div class="service-text" style="order: 2;">
-                        <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 1px;">ADVANCED TECH</span>
-                        <h2 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">Precision Electronic Diagnostics</h2>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.8;">Modern transmissions are controlled by complex computers. Our master technicians use aerospace-grade diagnostic equipment to interface directly with your vehicle's TCM (Transmission Control Module).</p>
-                        <p style="margin-bottom: 2rem; opacity: 0.8;">We identify solenoid failures, sensor errors, and hydraulic pressure issues with 100% accuracy, often saving you from unnecessary major repairs.</p>
-                        <a href="premium.html#estimator" class="btn btn-outline">Run Preliminary Estimate</a>
-                    </div>
-                    <div class="service-image" style="order: 1;">
-                        <img src="assets/transmission_diagnostic.png" alt="Diagnostics" style="border-radius: 24px; box-shadow: var(--shadow);">
-                    </div>
-                </div>
-
-                <!-- Service 3: Clutch & Performance -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 4rem; align-items: center;">
-                    <div class="service-image">
-                        <img src="assets/transmission_clutch.png" alt="Clutch Service" style="border-radius: 24px; box-shadow: var(--shadow);">
-                    </div>
-                    <div class="service-text">
-                        <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 1px;">HIGH PERFORMANCE</span>
-                        <h2 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">Clutch Repair & Performance Upgrades</h2>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.8;">From standard manual clutch replacements to high-performance dual-clutch system calibrations, we handle the most demanding power-transfer systems.</p>
-                        <p style="margin-bottom: 2rem; opacity: 0.8;">We also offer heavy-duty towing kits and racing-spec upgrades for enthusiasts who demand more from their drivetrains.</p>
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="contact.html" class="btn btn-primary">Book Repair</a>
-                            <a href="signup.html" class="btn btn-secondary">Join Member Club</a>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2.5rem;">
+                    <!-- Service 1: Rebuilds -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-tools" style="font-size: 2rem; color: var(--primary-color);"></i>
                         </div>
+                        <h3 style="margin-bottom: 1rem;">Full Rebuilds</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Ultrasonic cleaning and precision reassembly of every internal component to OEM specs.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 2: Diagnostics -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-microchip" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Advanced Diagnostics</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Aerospace-grade TCM interfacing to decode complex electronic drivetrain failures.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 3: Clutch -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-compact-disc" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Clutch Systems</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Manual clutch replacements and high-performance dual-clutch (DCT) calibrations.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 4: Fluid -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-oil-can" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Fluid Engineering</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Full molecular fluid exchange with system-wide pressure flushing and filtering.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 5: Differential -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-cog" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Differential Repair</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Expert service for front and rear differentials, including limited-slip and locking systems.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 6: Transfer Case -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-truck-pickup" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Transfer Cases</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Specialized 4WD and AWD transfer case rebuilding and electronic actuator repair.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 7: Programming -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-laptop-code" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">TCM Reflashing</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Cloud-based OEM software updates and custom shift-point calibrations.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 8: Fleet -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-shipping-fast" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Fleet Logistics</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Priority maintenance schedules and 24/7 mobile response for commercial fleets.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
+                    </div>
+
+                    <!-- Service 9: Performance -->
+                    <div style="padding: 3rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--border-color); text-align: center;" class="card-hover">
+                        <div style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i class="fas fa-tachometer-alt" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 1rem;">Elite Performance</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin-bottom: 2rem;">Stage-2 upgrades, torque converter enhancements, and racing-spec internals.</p>
+                        <a href="contact.html" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 0.9rem;">LEARN MORE <i class="fas fa-arrow-right" style="font-size: 0.8rem; margin-left: 0.5rem;"></i></a>
                     </div>
                 </div>
             </div>

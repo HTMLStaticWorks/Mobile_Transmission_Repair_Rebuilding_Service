@@ -30,12 +30,12 @@
 
 /* Dark Mode Overrides */
 [data-theme='dark'] {
-    --bg-color: #0f172a;
+    --bg-color: #000000;
     --text-color: #f8fafc;
-    --card-bg: #1e293b;
-    --border-color: #334155;
-    --header-bg: rgba(15, 23, 42, 0.8);
-    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --card-bg: #111111;
+    --border-color: #222222;
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
 /* RTL Overrides & Logical Properties */
@@ -90,7 +90,7 @@
 
 /* Logical Properties for Modern Browsers */
 .btn, .service-card, .footer-col, .step {
-    text-align: start;
+    text-align: center;
 }
 
 /* Global Styles */
@@ -156,14 +156,17 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 1.1rem;
-    border-radius: var(--border-radius);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
     border: none;
     transition: var(--transition);
     font-family: inherit;
     gap: 0.5rem;
+    min-width: 180px;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -204,6 +207,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+}
+
+.btn-white {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-white:hover {
+    background-color: white;
+    color: var(--primary-color);
 }
 
 /* Header */
@@ -306,6 +320,14 @@ footer {
     margin-bottom: 3rem;
 }
 
+.footer-col {
+    text-align: left;
+}
+
+.footer-col ul {
+    padding: 0;
+}
+
 .footer-col h4 {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
@@ -313,6 +335,17 @@ footer {
 
 .footer-col ul li {
     margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+.footer-col ul li i {
+    width: 20px;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
 }
 
 .footer-bottom {
@@ -340,7 +373,20 @@ footer {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    z-index: 1001; /* Higher than footer and other elements */
+    z-index: 1001;
+    box-shadow: var(--shadow);
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 767px) {
@@ -384,7 +430,7 @@ footer {
     width: 100%;
     height: 0;
     background-color: var(--bg-color);
-    overflow: hidden;
+    overflow-y: auto;
     transition: var(--transition);
     z-index: 999;
     border-bottom: 1px solid var(--border-color);
@@ -393,8 +439,9 @@ footer {
 }
 
 .mobile-menu.active {
-    height: calc(100vh - 80px);
-    padding: 2rem;
+    height: auto;
+    max-height: calc(100vh - 80px);
+    padding: 2rem 1.5rem;
     visibility: visible;
     opacity: 1;
 }
@@ -402,13 +449,24 @@ footer {
 .mobile-menu ul {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
 }
 
 .mobile-menu ul li a {
     font-size: 1.5rem;
     font-weight: 600;
+    transition: var(--transition);
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
+.mobile-menu ul li a.active {
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.1);
+    border-left: 4px solid var(--primary-color);
 }
 
 .mobile-ctas {
@@ -441,6 +499,14 @@ footer {
     transform: translateY(-5px) scale(1.2);
     filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.6));
 }
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color) !important;
+    background: var(--card-bg) !important;
+}
+
 
 /* Utilities */
 .d-none-mobile {
@@ -530,13 +596,28 @@ footer {
 }
 
 /* Tablet Optimizations */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.2fr 0.8fr 1.5fr 0.8fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-col p, .footer-col ul li {
+        font-size: 0.9rem;
+    }
+    
     section {
         padding: 80px 0;
     }
 
     #cta {
         padding: 100px 0;
+    }
+
+    /* Constrain large images on tablet */
+    .tech-image, .why-us-image {
+        max-width: 700px;
+        margin: 0 auto 4rem;
     }
 
     /* Estimator Tablet Fix */
@@ -557,6 +638,21 @@ footer {
 
     .estimator-info h2 {
         font-size: 2rem !important;
+    }
+
+    /* Fix badge overflow on mobile */
+    .tech-image {
+        margin-bottom: 3rem;
+    }
+    
+    .tech-image div {
+        right: 0 !important;
+        bottom: -20px !important;
+        padding: 1rem !important;
+    }
+    
+    .tech-image div h4 {
+        font-size: 1.1rem !important;
     }
 }
 

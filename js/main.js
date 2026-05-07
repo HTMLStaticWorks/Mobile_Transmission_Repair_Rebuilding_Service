@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollTop();
     setActiveLink();
+    initHeaderScroll();
 });
 
 function initTheme() {
@@ -66,7 +67,7 @@ function renderHeader() {
     header.innerHTML = `
         <div class="container nav-container">
             <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem;">
-                <img src="assets/mechanical_logo.png" alt="Logo" style="height: 40px;">
+                <img src="assets/shiftfix_logo.svg" alt="Logo" style="height: 40px;">
                 <span style="font-size: 1.5rem; font-weight: 800; color: var(--primary-color); letter-spacing: -1px;">ShiftFix</span>
             </a>
             <ul class="nav-links">
@@ -81,7 +82,7 @@ function renderHeader() {
             <div class="nav-actions">
                 <button onclick="toggleTheme()" class="toggle-btn theme-toggle d-none-mobile" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                 <button onclick="toggleRTL()" class="toggle-btn d-none-mobile" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                <a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.85rem;">Sign Up</a>
+                <a href="signup.html" class="btn btn-primary d-none-mobile" style="padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.85rem;">Sign Up</a>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
@@ -98,6 +99,9 @@ function renderHeader() {
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
+                <li style="width: 100%; padding-top: 1rem;">
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%; padding: 0.8rem; border-radius: 12px;">Sign Up</a>
+                </li>
                 <li style="display: flex; gap: 1rem; width: 100%; padding-top: 1rem; justify-content: center;">
                     <button onclick="toggleTheme()" class="toggle-btn theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                     <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
@@ -122,8 +126,8 @@ function renderFooter() {
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <img src="assets/mechanical_logo.png" alt="Logo" style="height: 30px;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; justify-content: flex-start;">
+                        <img src="assets/shiftfix_logo.svg" alt="Logo" style="height: 30px;">
                         <span style="font-size: 1.25rem; font-weight: 800; color: var(--primary-color);">ShiftFix</span>
                     </div>
                     <p>Expert transmission repair & rebuilding services. Trust-focused and professional care for your vehicle.</p>
@@ -148,7 +152,7 @@ function renderFooter() {
                 </div>
                 <div class="footer-col">
                     <h4>Follow Us</h4>
-                    <div class="social-icons">
+                    <div class="social-icons" style="justify-content: flex-start;">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-x-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -200,6 +204,21 @@ function setActiveLink() {
     links.forEach(link => {
         if (link.getAttribute('href') === current) {
             link.classList.add('active');
+        }
+    });
+}
+
+function initHeaderScroll() {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            header.style.borderBottom = 'none';
+        } else {
+            header.style.boxShadow = 'none';
+            header.style.borderBottom = '1px solid var(--border-color)';
         }
     });
 }

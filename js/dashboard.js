@@ -8,10 +8,33 @@ function initDashboard() {
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     const contentViews = document.querySelectorAll('.content-view');
 
+    // Mobile Sidebar Toggle
+    const hamburger = document.getElementById('dashboard-hamburger');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    const overlay = document.getElementById('dashboard-overlay');
+
+    if (hamburger && sidebar && overlay) {
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    }
+
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
             const target = link.getAttribute('data-view');
             
+            // Close mobile sidebar if open
+            if (sidebar && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+
             // Update active link
             sidebarLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
