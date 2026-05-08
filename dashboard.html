@@ -64,11 +64,11 @@
         <main class="dashboard-main">
             <!-- Topbar -->
             <header class="dashboard-topbar">
-                <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
                     <div class="hamburger d-md-none" id="dashboard-hamburger" style="display: none; flex-direction: column; gap: 4px; cursor: pointer;">
-                        <span style="width: 20px; height: 2px; background: var(--text-color);"></span>
-                        <span style="width: 20px; height: 2px; background: var(--text-color);"></span>
-                        <span style="width: 20px; height: 2px; background: var(--text-color);"></span>
+                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
+                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
+                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
                     </div>
                     <h2 id="dashboard-heading" style="margin: 0;">User&nbsp;Dashboard</h2>
                 </div>
@@ -126,9 +126,9 @@
                     </div>
 
                     <div class="tracker-container">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                            <h4>Current Job: 2021 BMW M3 Transmission Rebuild</h4>
-                            <span class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; pointer-events: none;">IN PROGRESS</span>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                            <h4 style="margin: 0; max-width: 400px; line-height: 1.4;">Current Job: 2021 BMW M3 Transmission Rebuild</h4>
+                            <span class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; cursor: default; white-space: nowrap;">IN PROGRESS</span>
                         </div>
                         <div class="tracking-steps">
                             <div class="tracking-progress"></div>
@@ -161,7 +161,7 @@
                     <h3>Schedule a New Service</h3>
                     <div style="background: var(--bg-color); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow); margin-top: 1.5rem;">
                         <form style="display: grid; gap: 1.5rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="booking-form-row">
                                 <div>
                                     <label>Preferred Date</label>
                                     <input type="date" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: inherit;">
@@ -241,7 +241,7 @@
                             <span style="color: var(--secondary-color); font-weight: 700;">+$245.00</span>
                         </div>
                         <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">During inspection, we found excessive wear on the planetary carrier. Replacing this now will prevent future failure.</p>
-                        <div style="display: flex; gap: 1rem;">
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                             <button onclick="approveWork(102)" class="btn btn-primary">Approve & Continue</button>
                             <button class="btn btn-outline" style="border-color: var(--error); color: var(--error);">Decline / Call Me</button>
                         </div>
@@ -251,7 +251,7 @@
                 <!-- Warranty Section -->
                 <div id="warranty" class="content-view">
                     <h3>Warranty Management</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                         <div style="background: var(--bg-color); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow); border-top: 5px solid var(--success);">
                             <h4>Gold Rebuild Warranty</h4>
                             <p style="font-size: 0.8rem; opacity: 0.6;">Job ID: #TR-9902</p>
@@ -273,8 +273,8 @@
                 <!-- History Section -->
                 <div id="history" class="content-view">
                     <h3>Service History</h3>
-                    <div style="background: var(--bg-color); border-radius: 20px; box-shadow: var(--shadow); margin-top: 1.5rem; overflow: hidden;">
-                        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <div class="table-container" style="background: var(--bg-color); border-radius: 20px; box-shadow: var(--shadow); margin-top: 1.5rem; overflow-x: auto;">
+                        <table style="width: 100%; min-width: 600px; border-collapse: collapse; text-align: left;">
                             <thead>
                                 <tr style="background: var(--card-bg);">
                                     <th style="padding: 1rem;">Date</th>
@@ -286,18 +286,18 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding: 1rem;">Oct 12, 2025</td>
-                                    <td style="padding: 1rem;">Fluid Flush</td>
-                                    <td style="padding: 1rem;">2018 Ford F-150</td>
-                                    <td style="padding: 1rem;">$189.00</td>
-                                    <td style="padding: 1rem;"><a href="#" style="color: var(--primary-color);">Invoice</a></td>
+                                    <td data-label="Date" style="padding: 1rem;">Oct 12, 2025</td>
+                                    <td data-label="Service" style="padding: 1rem;">Fluid Flush</td>
+                                    <td data-label="Vehicle" style="padding: 1rem;">2018 Ford F-150</td>
+                                    <td data-label="Cost" style="padding: 1rem;">$189.00</td>
+                                    <td data-label="Action" style="padding: 1rem;"><a href="#" style="color: var(--primary-color);">Invoice</a></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 1rem;">Jan 05, 2026</td>
-                                    <td style="padding: 1rem;">Diagnostic</td>
-                                    <td style="padding: 1rem;">2021 BMW M3</td>
-                                    <td style="padding: 1rem;">$99.00</td>
-                                    <td style="padding: 1rem;"><a href="#" style="color: var(--primary-color);">Invoice</a></td>
+                                    <td data-label="Date" style="padding: 1rem;">Jan 05, 2026</td>
+                                    <td data-label="Service" style="padding: 1rem;">Diagnostic</td>
+                                    <td data-label="Vehicle" style="padding: 1rem;">2021 BMW M3</td>
+                                    <td data-label="Cost" style="padding: 1rem;">$99.00</td>
+                                    <td data-label="Action" style="padding: 1rem;"><a href="#" style="color: var(--primary-color);">Invoice</a></td>
                                 </tr>
                             </tbody>
                         </table>

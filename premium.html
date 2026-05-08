@@ -66,6 +66,90 @@
             display: inline-block;
             margin-bottom: 2rem;
         }
+
+        .floating-badge {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            padding: 2.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            box-shadow: var(--shadow);
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 1024px) {
+            .floating-badge {
+                top: 20px;
+                left: 20px;
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+            .floating-badge h4 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .floating-badge {
+                position: relative;
+                top: -40px;
+                left: 0;
+                margin: 0 auto;
+                width: fit-content;
+                text-align: center;
+                padding: 1.25rem 2rem;
+                margin-bottom: -20px;
+            }
+        }
+
+        .stats-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            padding: 2.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .stats-badge h4, .stats-badge p {
+            color: white !important;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-badge {
+                bottom: 20px;
+                right: 20px;
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+            .stats-badge h4 {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .stats-badge {
+                position: relative;
+                bottom: 40px;
+                right: 0;
+                margin: 0 auto;
+                width: fit-content;
+                text-align: center;
+                padding: 1.25rem 2rem;
+                margin-bottom: -20px;
+            }
+        }
+
+
     </style>
 </head>
 
@@ -98,13 +182,13 @@
                     <div class="hero-visual" style="position: relative;">
                         <img src="assets/transmission_hero_premium.png" alt="Premium Transmission"
                             style="width: 100%; border-radius: 40px; box-shadow: var(--shadow);">
-                        <div
-                            style="position: absolute; top: -30px; left: -30px; padding: 2.5rem; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(15px); border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1); color: white; box-shadow: var(--shadow); z-index: 10;">
+                        <div class="floating-badge">
                             <h4 style="margin: 0; font-size: 2.5rem; font-weight: 800; color: white;">99.9%</h4>
                             <p
                                 style="margin: 0; font-size: 0.85rem; opacity: 0.8; text-transform: uppercase; color: white; letter-spacing: 1px;">
                                 Uptime Guaranteed</p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -133,20 +217,20 @@
                             <img src="https://images.pexels.com/photos/7568422/pexels-photo-7568422.jpeg"
                                 alt="Performance Rebuild"
                                 style="width: 100%; border-radius: 40px; box-shadow: var(--shadow);">
-                            <div class="glass-card"
-                                style="position: absolute; bottom: -30px; right: -30px; padding: 2.5rem; background: var(--primary-color); color: white; border: none;">
+                            <div class="stats-badge">
                                 <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: white;">+40% Torque</h4>
                                 <p style="font-size: 0.8rem; opacity: 0.8; margin: 0; color: white;">Enhanced Capacity
                                     Specs</p>
                             </div>
+
                         </div>
                     </div>
                     <div class="performance-content" style="text-align: center;">
                         <span style="color: var(--primary-color); font-weight: 800; letter-spacing: 2px;">PERFORMANCE
                             ENGINEERING</span>
-                        <h2 style="font-size: 3.5rem; margin-top: 1rem; margin-bottom: 2rem;">Beyond Factory Standards.
+                        <h2 style="font-size: 2.8rem; margin-top: 1rem; margin-bottom: 2rem;">Beyond Factory Standards.
                         </h2>
-                        <p style="font-size: 1.2rem; opacity: 0.8; line-height: 1.8; margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">For
+                        <p style="font-size: 1.1rem; opacity: 0.8; line-height: 1.8; margin-bottom: 2rem; max-width: 600px; margin-inline: auto;">For
                             heavy-duty towing, performance racing, or industrial fleet demands, "factory specs" often
                             aren't enough. We engineer custom solutions that exceed original manufacturer tolerances.
                         </p>
@@ -368,13 +452,16 @@
         </section>
 
         <!-- Final CTA -->
-        <section style="padding: 100px 0; text-align: center;">
-            <div class="container">
-                <h2 style="font-size: 4rem; font-weight: 800; margin-bottom: 2rem;">Ready for the Elite Experience?</h2>
-                <p style="font-size: 1.5rem; opacity: 0.7; margin-bottom: 4rem; max-width: 800px; margin-inline: auto;">
+        <section style="padding: 80px 0; background: var(--card-bg); border-top: 1px solid var(--border-color); text-align: center; position: relative; overflow: hidden;">
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 style="font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -1px;">Ready for the Elite Experience?</h2>
+                <p style="font-size: 1.1rem; opacity: 0.7; margin-bottom: 3rem; max-width: 700px; margin-inline: auto;">
                     Join the thousands of premium vehicle owners who trust ShiftFix for zero-compromise engineering.</p>
-                <a href="signup.html" class="btn btn-secondary">Start Your Journey</a>
+                <a href="signup.html" class="btn btn-secondary" style="padding: 1rem 3rem; font-size: 1.1rem; border-radius: 100px;">Start Your Journey</a>
             </div>
+            <!-- Decorative background elements -->
+            <div style="position: absolute; top: -50%; left: -10%; width: 40%; height: 200%; background: radial-gradient(circle, var(--primary-color), transparent); opacity: 0.05; transform: rotate(15deg);"></div>
+            <div style="position: absolute; bottom: -50%; right: -10%; width: 40%; height: 200%; background: radial-gradient(circle, var(--secondary-color), transparent); opacity: 0.05; transform: rotate(-15deg);"></div>
         </section>
     </main>
 

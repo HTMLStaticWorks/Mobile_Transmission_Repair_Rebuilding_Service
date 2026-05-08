@@ -61,8 +61,12 @@ function renderHeader() {
     const isAuthPage = path.endsWith('login.html') || path.endsWith('signup.html');
     if (isAuthPage) {
         header.style.display = 'none';
+        document.body.classList.remove('has-fixed-header');
         return;
     }
+
+    document.body.classList.add('has-fixed-header');
+
 
     header.innerHTML = `
         <div class="container nav-container">
@@ -146,8 +150,8 @@ function renderFooter() {
                     <h4>Contact Info</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> 123 Gear St, Auto City</li>
-                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> service@transmissionpro.com</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:5551234567">(555) 123-4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:service@transmissionpro.com">service@transmissionpro.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -215,10 +219,9 @@ function initHeaderScroll() {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
             header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-            header.style.borderBottom = 'none';
+            header.style.backgroundColor = 'var(--header-bg)';
         } else {
             header.style.boxShadow = 'none';
-            header.style.borderBottom = '1px solid var(--border-color)';
         }
     });
 }

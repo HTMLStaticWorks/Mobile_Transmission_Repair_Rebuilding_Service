@@ -64,7 +64,6 @@
     margin-left: 280px;
     display: flex;
     flex-direction: column;
-    max-width: calc(100vw - 280px);
     min-width: 0;
     height: 100vh;
     overflow-y: auto;
@@ -147,10 +146,23 @@
     }
 }
 
+.booking-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .booking-form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
 /* Stat Cards */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
@@ -185,12 +197,28 @@
 
 .tracking-steps {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 2rem;
     position: relative;
     overflow-x: auto;
-    padding-bottom: 1rem;
-    gap: 1rem;
+    padding-bottom: 1.5rem;
+    gap: 3rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    min-width: 0;
+}
+
+.tracking-steps::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tracking-steps::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tracking-steps::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
 }
 
 .tracking-steps::before {
@@ -198,7 +226,7 @@
     position: absolute;
     top: 15px;
     left: 0;
-    width: 100%;
+    width: 600px; /* Fixed width to cover all steps during scroll */
     height: 4px;
     background: var(--border-color);
     z-index: 1;
@@ -208,7 +236,7 @@
     position: absolute;
     top: 15px;
     left: 0;
-    width: 40%;
+    width: 240px; /* Fixed width for current progress step */
     height: 4px;
     background: var(--primary-color);
     z-index: 2;
@@ -218,7 +246,7 @@
     position: relative;
     z-index: 3;
     text-align: center;
-    width: 100px;
+    flex: 0 0 100px; /* Fixed width steps for reliable scrolling */
 }
 
 .track-step .dot {
@@ -252,7 +280,7 @@
 /* Photo Gallery */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -268,16 +296,12 @@
 /* Responsive Dashboard */
 @media (max-width: 1023px) {
     .dashboard-sidebar {
-        width: 240px;
-        padding: 1.5rem;
-    }
-
-    .dashboard-sidebar .logo span {
-        display: block !important;
+        width: 280px;
+        padding: 2rem;
     }
 
     .sidebar-link span {
-        display: none; /* Keep links compact but sidebar wide for branding/logout */
+        display: block !important;
     }
 
     .dashboard-sidebar .logo {
@@ -287,8 +311,8 @@
     }
 
     .dashboard-main {
-        margin-left: 240px;
-        max-width: calc(100vw - 240px);
+        margin-left: 280px;
+        width: calc(100% - 280px);
     }
 
     .dashboard-topbar {
@@ -303,7 +327,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 150px;
+        max-width: 200px;
     }
 
     .topbar-actions {
@@ -311,7 +335,7 @@
     }
 
     .profile-trigger {
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 }
 
@@ -358,10 +382,11 @@
 
     .dashboard-main {
         margin-left: 0;
+        max-width: 100%;
     }
 
     .dashboard-topbar {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
         height: 60px;
     }
 
@@ -384,13 +409,109 @@
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
+    /* Responsive Table Stacking */
+    .table-container table {
+        min-width: 100% !important;
+    }
+
+    .table-container thead {
+        display: none;
+    }
+
+    .table-container tr {
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+    }
+
+    .table-container tr:last-child {
+        border-bottom: none;
+    }
+
+    .table-container td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem !important;
+        text-align: right;
+        border: none !important;
+    }
+
+    .table-container td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--primary-color);
+        margin-right: 1rem;
+        text-align: left;
+    }
+
+    /* Vertical Tracker for Mobile */
+    .tracking-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        padding: 1rem 0 1rem 1rem;
+        overflow-x: visible;
+    }
+
+    .tracking-steps::before {
+        width: 4px;
+        height: 100%;
+        top: 0;
+        left: 13px;
+    }
+
+    .tracking-progress {
+        width: 4px;
+        height: 140px; /* Aligns with current 'active' step in vertical view */
+        top: 0;
+        left: 13px;
+    }
+
+    .track-step {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: left;
+        flex: none;
+        width: 100%;
+    }
+
+    .track-step .dot {
+        margin: 0;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .dashboard-topbar {
+        padding: 0 0.75rem;
+    }
+
     .dashboard-topbar h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        max-width: none;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
+    .toggle-btn {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .topbar-actions {
+        gap: 0.5rem !important;
+    }
+
     .profile-trigger img {
         width: 32px;
         height: 32px;
