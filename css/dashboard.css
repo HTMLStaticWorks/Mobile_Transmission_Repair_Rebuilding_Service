@@ -543,24 +543,24 @@
         width: 4px;
         height: 100%;
         top: 0;
-        left: 13px;
+        left: 29px; /* Center of the 30px dot + 1rem padding-left */
     }
 
     [dir="rtl"] .tracking-steps::before {
         left: auto;
-        right: 13px;
+        right: 29px;
     }
 
     .tracking-progress {
         width: 4px;
         height: 140px; /* Aligns with current 'active' step in vertical view */
         top: 0;
-        left: 13px;
+        left: 29px;
     }
 
     [dir="rtl"] .tracking-progress {
         left: auto;
-        right: 13px;
+        right: 29px;
     }
 
     .track-step {
