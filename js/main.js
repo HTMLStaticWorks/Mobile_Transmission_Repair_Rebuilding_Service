@@ -58,7 +58,7 @@ function renderHeader() {
     if (!header) return;
 
     const path = window.location.pathname;
-    const isAuthPage = path.endsWith('login.html') || path.endsWith('signup.html');
+    const isAuthPage = path.endsWith('login.html') || path.endsWith('signup.html') || path.endsWith('forgot-password.html');
     if (isAuthPage) {
         header.style.display = 'none';
         document.body.classList.remove('has-fixed-header');
@@ -120,7 +120,7 @@ function renderFooter() {
     if (!footer) return;
 
     // No footer on auth pages
-    const isAuthPage = window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html');
+    const isAuthPage = window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html') || window.location.pathname.includes('forgot-password.html');
     if (isAuthPage) {
         footer.style.display = 'none';
         return;
