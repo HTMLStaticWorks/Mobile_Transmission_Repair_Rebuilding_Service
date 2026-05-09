@@ -54,6 +54,10 @@
                 </div>
             </nav>
             <div class="sidebar-footer" style="margin-top: auto; padding: 1.5rem 0;">
+                <div class="sidebar-actions-mobile" style="display: none; gap: 1rem; margin-bottom: 1.5rem; padding: 0 1.25rem;">
+                    <button onclick="toggleTheme()" class="toggle-btn theme-toggle" style="width: 45px; height: 45px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); cursor: pointer;"><i class="fas fa-moon"></i></button>
+                    <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL" style="width: 45px; height: 45px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); cursor: pointer;"><i class="fas fa-right-left"></i></button>
+                </div>
                 <div class="logout-btn" onclick="logout()">
                     <i class="fas fa-sign-out-alt" style="width: 24px; font-size: 1.2rem; text-align: center;"></i> <span>Log&nbsp;Out</span>
                 </div>
@@ -70,11 +74,11 @@
                         <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
                         <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
                     </div>
-                    <h2 id="dashboard-heading" style="margin: 0;">User&nbsp;Dashboard</h2>
+                    <h2 id="dashboard-heading" style="margin: 0;">Overview</h2>
                 </div>
                 <div class="topbar-actions">
-                    <button onclick="toggleTheme()" class="toggle-btn theme-toggle"><i class="fas fa-moon"></i></button>
-                    <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
+                    <button onclick="toggleTheme()" class="toggle-btn theme-toggle d-none-mobile"><i class="fas fa-moon"></i></button>
+                    <button onclick="toggleRTL()" class="toggle-btn d-none-mobile" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
                     <div class="notif-badge">
                         <i class="fas fa-bell" style="font-size: 1.2rem; cursor: pointer;"></i>
                     </div>
