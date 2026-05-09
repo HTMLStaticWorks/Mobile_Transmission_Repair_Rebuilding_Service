@@ -22,6 +22,13 @@
     transition: var(--transition);
 }
 
+[dir="rtl"] .dashboard-sidebar {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+    left: auto;
+    right: 0;
+}
+
 .dashboard-sidebar .logo {
     margin-bottom: 3rem;
 }
@@ -94,6 +101,11 @@
     min-width: 0;
     height: 100vh;
     overflow-y: auto;
+}
+
+[dir="rtl"] .dashboard-main {
+    margin-left: 0;
+    margin-right: 280px;
 }
 
 /* Top Bar */
@@ -259,6 +271,11 @@
     z-index: 1;
 }
 
+[dir="rtl"] .tracking-steps::before {
+    left: auto;
+    right: 0;
+}
+
 .tracking-progress {
     position: absolute;
     top: 15px;
@@ -267,6 +284,11 @@
     height: 4px;
     background: var(--primary-color);
     z-index: 2;
+}
+
+[dir="rtl"] .tracking-progress {
+    left: auto;
+    right: 0;
 }
 
 .track-step {
@@ -334,6 +356,12 @@
         visibility: hidden;
     }
 
+    [dir="rtl"] .dashboard-sidebar {
+        transform: translateX(100%);
+        left: auto;
+        right: 0;
+    }
+
     .dashboard-sidebar.active {
         transform: translateX(0);
         visibility: visible;
@@ -358,6 +386,18 @@
     .dashboard-main {
         margin-left: 0;
         width: 100%;
+    }
+
+    [dir="rtl"] .dashboard-main {
+        margin-right: 0;
+    }
+    
+    [dir="rtl"] .dashboard-topbar {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .topbar-actions {
+        flex-direction: row-reverse;
     }
 
     /* Mobile Overlay */
@@ -506,11 +546,21 @@
         left: 13px;
     }
 
+    [dir="rtl"] .tracking-steps::before {
+        left: auto;
+        right: 13px;
+    }
+
     .tracking-progress {
         width: 4px;
         height: 140px; /* Aligns with current 'active' step in vertical view */
         top: 0;
         left: 13px;
+    }
+
+    [dir="rtl"] .tracking-progress {
+        left: auto;
+        right: 13px;
     }
 
     .track-step {
@@ -520,6 +570,11 @@
         text-align: left;
         flex: none;
         width: 100%;
+    }
+
+    [dir="rtl"] .track-step {
+        flex-direction: row-reverse;
+        text-align: right;
     }
 
     .track-step .dot {

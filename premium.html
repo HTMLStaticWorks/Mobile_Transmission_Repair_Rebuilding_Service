@@ -149,6 +149,26 @@
             }
         }
 
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 1100px) {
+            .premium-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .premium-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
 
     </style>
 </head>
@@ -338,9 +358,9 @@
                             transmission rebuild in real-time with live telemetry, HD photo updates, and instant
                             engineer approvals—all from your mobile device.</p>
 
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 3rem; text-align: center;">
+                        <div class="premium-grid">
                             <div
-                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
                                 <div
                                     style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
                                     <i class="fas fa-video" style="color: var(--primary-color); font-size: 1.5rem;"></i>
@@ -351,7 +371,7 @@
                                     absolute trust in every part replaced.</p>
                             </div>
                             <div
-                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
                                 <div
                                     style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
                                     <i class="fas fa-file-invoice-dollar"
@@ -363,7 +383,7 @@
                                     unnecessary phone calls or delays.</p>
                             </div>
                             <div
-                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
                                 <div
                                     style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
                                     <i class="fas fa-satellite-dish"
@@ -375,7 +395,7 @@
                                     performance.</p>
                             </div>
                             <div
-                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
                                 <div
                                     style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
                                     <i class="fas fa-comments"
@@ -385,6 +405,56 @@
                                 <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">Communicate directly with
                                     the Master Technician assigned to your vehicle through our encrypted priority
                                     messaging channel.</p>
+                            </div>
+                            <div
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
+                                    <i class="fas fa-heartbeat"
+                                        style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem;">AI Health Score</h4>
+                                <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">Predictive analysis of your transmission's longevity based on historical sensor data and real-time stress testing.</p>
+                            </div>
+                            <div
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
+                                    <i class="fas fa-box-open"
+                                        style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem;">Instant Parts Pipeline</h4>
+                                <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">Direct digital integration with OEM warehouses ensures that required components are dispatched before the teardown is even complete.</p>
+                            </div>
+                            <div
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
+                                    <i class="fas fa-headset"
+                                        style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem;">24/7 Concierge</h4>
+                                <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">Your dedicated technical advisor is available around the clock to provide updates and answer technical queries.</p>
+                            </div>
+                            <div
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
+                                    <i class="fas fa-vault"
+                                        style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem;">Digital Service Vault</h4>
+                                <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">All repair records and telemetry data are permanently archived in a secure vault, enhancing your vehicle's resale value.</p>
+                            </div>
+                            <div
+                                style="padding: 2.5rem; background: var(--bg-color); border-radius: 24px; box-shadow: var(--shadow); border: 1px solid var(--border-color); transition: var(--transition);" class="card-hover">
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; margin-inline: auto;">
+                                    <i class="fas fa-microchip"
+                                        style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                                </div>
+                                <h4 style="margin-bottom: 0.75rem;">Performance Tuning</h4>
+                                <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.6;">Custom recalibration of shift logic and pressure points using our proprietary cloud-based engineering algorithms.</p>
                             </div>
                         </div>
                     </div>
