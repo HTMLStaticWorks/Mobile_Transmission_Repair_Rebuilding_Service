@@ -136,6 +136,14 @@ img {
 }
 
 /* Typography */
+h1, h2, h3, h4, h5, h6, .section-title h2, .logo span {
+    font-weight: 550 !important;
+}
+
+p, span, a, li, label, summary, button, input, div, .btn {
+    font-weight: 500 !important;
+}
+
 h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
 h2 { font-size: 2rem; margin-bottom: 1.5rem; }
 h3 { font-size: 1.5rem; margin-bottom: 1rem; }

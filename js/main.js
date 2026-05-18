@@ -86,7 +86,7 @@ function renderHeader() {
             <div class="nav-actions">
                 <button onclick="toggleTheme()" class="toggle-btn theme-toggle d-none-mobile" title="Toggle Theme"><i class="fas fa-moon"></i></button>
                 <button onclick="toggleRTL()" class="toggle-btn d-none-mobile" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                <a href="signup.html" class="btn btn-primary d-none-mobile" style="padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.85rem;">Sign Up</a>
+                <a href="signup.html" class="btn btn-primary d-none-mobile" style="padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.85rem; min-width: 120px;">Sign Up</a>
                 <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>

@@ -69,19 +69,19 @@
             <!-- Topbar -->
             <header class="dashboard-topbar">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div class="hamburger" id="dashboard-hamburger" style="flex-direction: column; gap: 4px; cursor: pointer;">
-                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
-                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
-                        <span style="width: 25px; height: 3px; background: var(--text-color);"></span>
+                    <div class="hamburger" id="dashboard-hamburger" style="flex-direction: column; gap: 6px; cursor: pointer;">
+                        <span style="width: 35px; height: 4px; background: var(--text-color); border-radius: 2px;"></span>
+                        <span style="width: 35px; height: 4px; background: var(--text-color); border-radius: 2px;"></span>
+                        <span style="width: 35px; height: 4px; background: var(--text-color); border-radius: 2px;"></span>
                     </div>
                     <h2 id="dashboard-heading" style="margin: 0;">Overview</h2>
                 </div>
                 <div class="topbar-actions">
                     <button onclick="toggleTheme()" class="toggle-btn theme-toggle"><i class="fas fa-moon"></i></button>
                     <button onclick="toggleRTL()" class="toggle-btn" title="Toggle RTL"><i class="fas fa-right-left"></i></button>
-                    <div class="notif-badge">
-                        <i class="fas fa-bell" style="font-size: 1.2rem; cursor: pointer;"></i>
-                    </div>
+                    <button class="toggle-btn notif-badge" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                    </button>
                     <div class="profile-trigger">
                         <img src="https://i.pravatar.cc/100?u=me" alt="Profile">
                         <div class="d-none-mobile" style="display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap;">
