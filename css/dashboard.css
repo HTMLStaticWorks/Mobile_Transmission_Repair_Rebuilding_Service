@@ -464,6 +464,10 @@
         min-width: 180px;
         white-space: nowrap;
     }
+
+    .sidebar-actions-mobile {
+        display: flex !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -474,10 +478,6 @@
 
     .d-none-mobile {
         display: none !important;
-    }
-
-    .sidebar-actions-mobile {
-        display: flex !important;
     }
 
     .dashboard-topbar {
